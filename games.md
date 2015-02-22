@@ -5,7 +5,7 @@ permalink: /games/
 ---
 
 ####[Legion Defender](http://globalgamejam.org/2015/games/legion-defender)  
-**Global Game Jam 2015**  
+**[Global Game Jam 2015](http://globalgamejam.org/)**  
 *Made with Python*
 
 ####[A Gentleman's Agreement : Billy Penn's Midnight Takedown](http://mfindlater.itch.io/gentlemens-agreement)  
