@@ -9,7 +9,7 @@ permalink: /games/
 *Made with Python*
 
 ####[A Gentleman's Agreement : Billy Penn's Midnight Takedown](http://mfindlater.itch.io/gentlemens-agreement)  
-**Philly Game Jam 2014**
+**Philly Game Jam 2014**  
 *Best Overall Game*  
 *"WTF?" Award*  
 *Best Use of Theme*  
@@ -20,7 +20,7 @@ permalink: /games/
 *Made with Unity*
 
 ####[SUPER HYPER G.H.O.S.T. ROBO JAM!](https://github.com/mfindlater/PGJ2013)  
-**Philly Game Jam 2013**
+**Philly Game Jam 2013**  
 *Most Innovative Game*   
 *Made with Unity*
 
