@@ -18,8 +18,8 @@ permalink: /games/
 *Made with Unity*
 
 ##[Gravity Bloke](http://mfindlater.itch.io/gravity-bloke)  
-**[Space Cowboy Jam](http://itch.io/jam/space-cowboy-jam)**  
 ![Gravity Bloke](http://img.itch.io/aW1hZ2UvODQ2OC8yMzQ4My5wbmc=/315x250%23/v%2FVo2I.png)
+**[Space Cowboy Jam](http://itch.io/jam/space-cowboy-jam)**  
 *Made with Unity*
 
 ##[SUPER HYPER G.H.O.S.T. ROBO JAM!](https://github.com/mfindlater/PGJ2013)  
