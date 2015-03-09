@@ -18,7 +18,7 @@ permalink: /games/
 *Made with Unity*
 
 ##[Gravity Bloke](http://mfindlater.itch.io/gravity-bloke)  
-![Gravity Bloke](http://img.itch.io/aW1hZ2UvODQ2OC8yMzQ4My5wbmc=/315x250%23/v%2FVo2I.png)
+![Gravity Bloke](http://img.itch.io/aW1hZ2UvODQ2OC8yMzQ4My5wbmc=/315x250%23/v%2FVo2I.png)  
 **[Space Cowboy Jam](http://itch.io/jam/space-cowboy-jam)**  
 *Made with Unity*
 
