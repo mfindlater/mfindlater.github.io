@@ -10,6 +10,7 @@ permalink: /games/
 *Made with Python*
 
 ##[A Gentleman's Agreement : Billy Penn's Midnight Takedown](http://mfindlater.itch.io/gentlemens-agreement)  
+![A Gentleman's Agreement](http://mfindlater.itch.io/gentlemens-agreement)  
 **Philly Game Jam 2014**  
 *Best Overall Game*  
 *"WTF?" Award*  
