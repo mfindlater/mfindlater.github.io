@@ -4,7 +4,8 @@ title: Games
 permalink: /games/
 ---
 
-##[Legion Defender](http://globalgamejam.org/2015/games/legion-defender)  
+##[Legion Defender](http://globalgamejam.org/2015/games/legion-defender)
+![Legion Defender](http://globalgamejam.org/sites/default/files/styles/game_sidebar__wide/public/game/featured_image/legion-defender.png?itok=pPqpzYU2)
 **[Global Game Jam 2015](http://globalgamejam.org/)**  
 *Made with Python*
 
