@@ -1,18 +1,41 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">    
-      
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Findlater</title>
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
 
-      <div class="entry">
-        {{ post.content | truncatewords:40}}
-      </div>
-      
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+<body class="font-display bg-timberwolf-500">
+  <div class="container mx-auto min-h-screen">
+    <header class="sticky text-center mt-4  py-4 rounded-xl bg-timberwolf-500 text-onyx-100">
+      <h1 class="text-4xl font-extrabold">Matthew Findlater</h1>
+      <p class="text-onyx-200">Software Developer</p>
+      <p class=" mt-4 p-4">I build software to solve problems. With over 10 years of experience, I focus on creating
+        solutions that are functional and simple to use.</p>
+      <ul class="flex justify-center mt-4 space-x-4">
+        <li><a href="mailto:mfindlater@justattack.com">
+            <img class="" src="/img/mail.svg" alt="Email"> Email
+          </a></li>
+        <li><a href="https://github.com/mfindlater">
+            <img class="" src="/img/github.svg" alt="GitHub">Github
+          </a></li>
+        <li><a href="https://linkedin.com/in/matthewfindlater">
+            <img class="" src="/img/linkedin.svg" alt="LinkedIn">LinkedIn
+          </a></li>
+
+      </ul>
+    </header>
+    <main class="">
+
+    </main>
+    <footer class="text-center py-8">
+      <p class="text-eerieblack">© 2025 Matthew Findlater</p>
+    </footer>
+  </div>
+</body>
+
+</html>

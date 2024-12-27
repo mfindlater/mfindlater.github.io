@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-*: initial;
+    --font-display: "Jetbrains Mono", "sans-serif";
+
+    --color-onyx-100: #090a0a;
+    --color-onyx-200: #121514;
+    --color-onyx-300: #1b1f1d;
+    --color-onyx-400: #242927;
+    --color-onyx-500: #2e3532;
+    --color-onyx-600: #53605b;
+    --color-onyx-700: #7a8c84;
+    --color-onyx-800: #a7b2ad;
+    --color-onyx-900: #d3d9d6;
+
+    --color-claret-100: #1c080b;
+    --color-claret-200: #380f15;
+    --color-claret-300: #541720;
+    --color-claret-400: #701f2b;
+    --color-claret-500: #8b2635;
+    --color-claret-600: #c0354a;
+    --color-claret-700: #d46374;
+    --color-claret-800: #e297a2;
+    --color-claret-900: #f1cbd1;
+
+    --color-alabaster-100: #2e3127;
+    --color-alabaster-200: #5d634f;
+    --color-alabaster-300: #8b9378;
+    --color-alabaster-400: #b5baa9;
+    --color-alabaster-500: #e0e2db;
+    --color-alabaster-600: #e6e7e2;
+    --color-alabaster-700: #ecede9;
+    --color-alabaster-800: #f2f3f0;
+    --color-alabaster-900: #f9f9f8;
+
+    --color-timberwolf-100: #2d2e24;
+    --color-timberwolf-200: #595d49;
+    --color-timberwolf-300: #868b6d;
+    --color-timberwolf-400: #acb09a;
+    --color-timberwolf-500: #d2d4c8;
+    --color-timberwolf-600: #dbddd4;
+    --color-timberwolf-700: #e4e5de;
+    --color-timberwolf-800: #edeee9;
+    --color-timberwolf-900: #f6f6f4;
+}
