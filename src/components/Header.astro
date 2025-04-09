@@ -1,0 +1,30 @@
+---
+import emailImage from "../assets/img/mail.svg";
+import githubImage from "../assets/img/github.svg";
+import linkedinImage from "../assets/img/linkedin.svg";
+import { Image } from "astro:assets";
+---
+
+<header
+    class="sticky text-center mt-4 py-4 rounded-xl bg-timberwolf-500 text-onyx-100"
+>
+    <h1 class="text-4xl font-extrabold">Matthew Findlater</h1>
+
+    <ul class="flex justify-center mt-4 space-x-4">
+        <li>
+            <a href="mailto:mfindlater@justattack.com">
+                <Image src={emailImage} alt="Email" /> Email
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/mfindlater" target="_blank">
+                <Image src={githubImage} alt="GitHub" />Github
+            </a>
+        </li>
+        <li>
+            <a href="https://linkedin.com/in/matthewfindlater " target="_blank">
+                <Image src={linkedinImage} alt="LinkedIn" />LinkedIn
+            </a>
+        </li>
+    </ul>
+</header>
