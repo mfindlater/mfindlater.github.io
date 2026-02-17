@@ -25,6 +25,7 @@ import { Tag } from "../lib/tags";
             <Picture
               src={emailImage}
               alt="Email"
+              class="dark:invert"
               formats={["avif", "webp", "png"]}
               loading="eager"
             />
@@ -32,19 +33,19 @@ import { Tag } from "../lib/tags";
         </li>
         <li>
           <a href="https://github.com/mfindlater" target="_blank">
-            <Picture src={githubImage} alt="GitHub" loading="eager" />
+            <Picture src={githubImage} alt="GitHub" class="dark:invert" loading="eager" />
           </a>
         </li>
         <li>
           <a href="https://linkedin.com/in/matthewfindlater" target="_blank">
-            <Picture src={linkedinImage} alt="LinkedIn" loading="eager" />
+            <Picture src={linkedinImage} alt="LinkedIn" class="dark:invert" loading="eager" />
           </a>
         </li>
       </ul>
     </div>
   </div>
   <p class="p-4">
-    <h1 class="text-onyx-200 text-3xl text-center font-bold">Hi, I'm Matt!</h1>
+    <h1 class="text-onyx-200 dark:text-alabaster-500 text-3xl text-center font-bold">Hi, I'm Matt!</h1>
     <div class="text-center mt-4">
       I am a software and game developer with a passion for creating
     </div><div class="text-center">
@@ -128,18 +129,18 @@ import { Tag } from "../lib/tags";
     <h2 class="text-2xl font-bold text-center mb-4 underline">Work History</h2>
     <div class="text-center mb-4">
       <h3 class="text-lg font-semibold">Freelance Full-Stack Developer</h3>
-      <p class="text-gray-700">Just Attack</p>
-      <p class="text-gray-700">February 2015 - Present</p>
-      <p class="text-gray-700">
+      <p class="text-gray-700 dark:text-onyx-800">Just Attack</p>
+      <p class="text-gray-700 dark:text-onyx-800">February 2015 - Present</p>
+      <p class="text-gray-700 dark:text-onyx-800">
         Developed and maintained web applications using ASP.NET Core, React, and
         PostgreSQL.
       </p>
     </div>
     <div class="text-center mb-4">
       <h3 class="text-lg font-semibold">Software Developer R&D</h3>
-      <p class="text-gray-700">clubsystems group</p>
-      <p class="text-gray-700">June 2009 - March 2020</p>
-      <p class="text-gray-700">
+      <p class="text-gray-700 dark:text-onyx-800">clubsystems group</p>
+      <p class="text-gray-700 dark:text-onyx-800">June 2009 - March 2020</p>
+      <p class="text-gray-700 dark:text-onyx-800">
         Worked on various projects including web applications and game
         development.
       </p>
@@ -150,8 +151,8 @@ import { Tag } from "../lib/tags";
           <h3 class="text-lg font-semibold">
             Bachelor of Science in Information Science & Technology
           </h3>
-          <p class="text-gray-700">Temple University</p>
-          <p class="text-gray-700">Graduated: August 2020</p>
+          <p class="text-gray-700 dark:text-onyx-800">Temple University</p>
+          <p class="text-gray-700 dark:text-onyx-800">Graduated: August 2020</p>
         </div>
       </div>
     </div>

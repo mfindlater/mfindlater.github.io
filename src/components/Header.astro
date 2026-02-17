@@ -1,16 +1,12 @@
 ---
 import menuImage from "../assets/img/menu.svg";
 import closeImage from "../assets/img/x.svg";
-import { Picture } from "astro:assets";
 import sunImage from "../assets/img/sun.svg";
 import moonImage from "../assets/img/moon.svg";
 import { Image } from "astro:assets";
-
-const { title } = Astro.props as { title: string };
 ---
 
-<header class="sticky mt-4 flex flex-col items-center px-4 py-2 shadow">
-  <!-- Name centered at the top for all screen sizes -->
+<header class="sticky mt-4 flex flex-col items-center px-4 py-2 shadow dark:shadow-onyx-400">
   <div class="flex items-center justify-center w-full relative">
     <!-- Mobile menu button positioned absolutely on the left -->
     <div class="absolute left-0 md:hidden">
@@ -24,51 +20,63 @@ const { title } = Astro.props as { title: string };
         <Image
           src={menuImage}
           alt="Menu"
-          class="menu-icon w-[32px]"
+          class="menu-icon w-[32px] dark:invert"
           loading="eager"
         />
         <Image
           src={closeImage}
           alt="Close"
-          class="close-icon hidden w-[32px]"
+          class="close-icon hidden w-[32px] dark:invert"
           loading="eager"
         />
       </button>
     </div>
 
-    <h1 class="text-4xl font-extrabold text-center">Matthew Findlater</h1>
+    <h1 class="text-4xl font-extrabold text-center dark:text-alabaster-500">Matthew Findlater</h1>
+
+    <!-- Dark mode toggle positioned absolutely on the right -->
+    <div class="absolute right-0">
+      <button
+        id="themeToggle"
+        class="cursor-pointer p-1"
+        aria-label="Toggle dark mode"
+        type="button"
+      >
+        <Image
+          src={moonImage}
+          alt="Dark mode"
+          id="moonIcon"
+          class="w-[24px]"
+          loading="eager"
+        />
+        <Image
+          src={sunImage}
+          alt="Light mode"
+          id="sunIcon"
+          class="hidden w-[24px] invert"
+          loading="eager"
+        />
+      </button>
+    </div>
   </div>
 
-  <!-- Navigation links below social links -->
+  <!-- Navigation links -->
   <nav id="mobileNav" class="hidden md:block w-full">
     <ol class="flex flex-col md:flex-row md:justify-center md:gap-8 mt-4">
       <li>
         <a
           href="/"
-          class="text-lg font-bold block hover:shadow hover:outline-2 rounded p-2 md:inline-block"
+          class="text-lg font-bold block hover:shadow hover:outline-2 rounded p-2 md:inline-block dark:text-alabaster-500"
           >Home</a
-        >
-      </li>
-      <li>
-        <a
-          href="/projects"
-          class="text-lg font-bold block hover:shadow hover:outline-2 rounded p-2 md:inline-block"
-          >Projects</a
         >
       </li>
     </ol>
   </nav>
-
-  <!--  <button id="" class="cursor-pointer justify-right flex mr-16 mt-2">
-    <div id="sun">
-      <Image src={moonImage} alt="Moon" class="md:block w-[24px]" />
-    </div>
-  </button> -->
 </header>
 
 <script>
-  // JavaScript to toggle mobile menu
   document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle
     const menuButton = document.getElementById("menuButton");
     const mobileNav = document.getElementById("mobileNav");
     const menuIcon = document.querySelector(".menu-icon");
@@ -76,23 +84,41 @@ const { title } = Astro.props as { title: string };
 
     if (menuButton && mobileNav && menuIcon && closeIcon) {
       menuButton.addEventListener("click", () => {
-        // Toggle navigation visibility
         mobileNav.classList.toggle("hidden");
-
-        // Toggle between menu and close icons
         menuIcon.classList.toggle("hidden");
         closeIcon.classList.toggle("hidden");
-
-        // Update aria-expanded attribute
         const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
         menuButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      });
+    }
+
+    // Dark mode toggle
+    const themeToggle = document.getElementById("themeToggle");
+    const moonIcon = document.getElementById("moonIcon");
+    const sunIcon = document.getElementById("sunIcon");
+
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains("dark");
+      if (moonIcon && sunIcon) {
+        moonIcon.classList.toggle("hidden", isDark);
+        sunIcon.classList.toggle("hidden", !isDark);
+      }
+    }
+
+    updateIcons();
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateIcons();
       });
     }
   });
 </script>
 
 <style>
-  /* Smooth transition for the mobile menu */
   #mobileNav {
     transition: all 0.3s ease-in-out;
   }
