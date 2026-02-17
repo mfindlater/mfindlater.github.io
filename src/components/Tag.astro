@@ -1,0 +1,10 @@
+---
+const { tag } = Astro.props;
+---
+
+<span
+  style={{ backgroundColor: tag.backgroundColor, color: "white" }}
+  class={`outline-2 text-gray-800 text-sm font-semibold px-2 py-1 rounded-full`}
+>
+  <a href={tag.link}> {tag.name}</a>
+</span>

@@ -1,74 +1,102 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Tag from "../lib/tags";
+
+const projects = [
+  {
+    name: "Treasury Dashboard",
+    description:
+      "An internal web app for tracking a church's income, expenses and donations. It supports reporting, importing transactions from third party sources (ie. PayPal, CashApp), Emailing donors tax summaries, and more.",
+    tags: [
+      Tag.fsharp,
+      Tag.dotnet,
+      Tag.aspnetcore,
+      Tag.sqlite,
+      Tag.htmx,
+      Tag.bulma,
+      Tag.javascript,
+    ],
+    image: "https://placehold.co/800x600",
+  },
+  {
+    name: "Twitch Chatbot",
+    description:
+      "A custom stream chatbot for a streamer with over 300k followers. Bot automates chat predictions and adds a visual slot machine game that can be played by viewers. Connects with Twitch and StreamElements API.",
+    tags: [
+      Tag.fsharp,
+      Tag.dotnet,
+      Tag.aspnetcore,
+      Tag.signalr,
+      Tag.sqlite,
+      Tag.htmx,
+      Tag.s3,
+      Tag.fly,
+    ],
+    image: "https://placehold.co/800x480",
+  },
+  {
+    name: "vgchan.org",
+    description:
+      "An imageboard focused on video games with admin features. Annoymous posts, automatic processing of image uploads (optimizing and resizing).",
+    tags: [
+      Tag.fsharp,
+      Tag.dotnet,
+      Tag.aspnetcore,
+      Tag.postgresql,
+      Tag.react,
+      Tag.s3,
+      Tag.sendgrid,
+      Tag.bulma,
+      Tag.digitalocean,
+    ],
+    image: "https://placehold.co/800x480",
+    links: [
+      {
+        name: "View Website",
+        href: "https://vgchan.org",
+      },
+    ],
+  },
+  {
+    name: "philasdb.org",
+    description:
+      "A website for a local church with a live stream. Frontend is built with Astro and Tailwind CSS. The backend is a ASP.NET Core application that handles the live stream server.",
+    tags: [
+      Tag.typescript,
+      Tag.astro,
+      Tag.tailwind,
+      Tag.react,
+      Tag.dotnet,
+      Tag.aspnetcore,
+    ],
+    image: "https://placehold.co/800x480",
+    links: [
+      {
+        name: "View Website",
+        href: "https://philasdb.org",
+      },
+      {
+        name: "Source",
+        href: "https://github.com/philasdb/website",
+      },
+    ],
+  },
+];
 ---
 
-<Layout>
-    <div class="columns-2 py-4 px-12">
-        <aside class="position-sticky">
-            <h1>Matthew Findlater</h1>
-            <p class="flex-auto">
-                I am a software developer with over 10 years of experience. My
-                goal is always to make software that is a joy to use.
-            </p>
-        </aside>
-        <main>
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <img src="https://placehold.co/600x400" alt="Project 1" />
-                    <h3>Project 1</h3>
-                    <p>Project 1 description</p>
-                </li>
-            </ul>
-        </main>
-    </div>
-
-    <div class="project mt-4 p-4 bg-alabaster-500 text-onyx-100 rounded-xl">
-        <img
-            class="mx-auto"
-            src="https://placehold.co/800x480"
-            alt="Project 1"
+<Layout title="Projects">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          name={project.name}
+          description={project.description}
+          tags={project.tags}
+          image={project.image}
+          links={project.links}
         />
-        <h3 class="mt-4 text-xl">Treasury Dashboard</h3>
-        <p>
-            An internal web app for tracking a church's income, expenses and
-            donations. It supports reporting, importing transactions from third
-            party sources (ie. PayPal, CashApp), Emailing donors tax summaries,
-            and more.
-        </p>
-        <p>
-            <strong>Technologies:</strong> .NET, SQLite, SendGrid, HTMX, Tailwind
-            CSS
-        </p>
-    </div>
-    <div class="project mt-4 p-4 bg-alabaster-500 text-onyx-100 rounded-xl">
-        <img
-            class="mx-auto"
-            src="https://placehold.co/800x480"
-            alt="Project 1"
-        />
-        <h3 class="mt-4 text-xl">Twitch Chatbot</h3>
-        <p>
-            A custom stream chatbot for a streamer with over 300k followers. Bot
-            automates chat predictions and adds a visual slot machine game that
-            can be played by viewers. Connects with twitch and StreamElements
-            API.
-        </p>
-        <p><strong>Technologies:</strong> .NET, SQLite, S3, HTMX</p>
-    </div>
-    <div class="project mt-4 p-4 bg-alabaster-500 text-onyx-100 rounded-xl">
-        <img
-            class="mx-auto"
-            src="https://placehold.co/800x480"
-            alt="Project 1"
-        />
-        <h3 class="mt-4 text-xl">vgchan</h3>
-        <p>
-            A custom video game imageboard with admin features. Annoymous posts,
-            automatic processing of image uploads (optimizing and resizing).
-        </p>
-        <p>
-            <strong>Technologies:</strong> .NET, PostgreSQL, S3, SendGrid, React
-        </p>
-    </div>
+      ))
+    }
+  </div>
 </Layout>

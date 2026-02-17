@@ -1,21 +1,159 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Picture from "astro/components/Picture.astro";
+import portrait from "../assets/img/portrait.png";
+import emailImage from "../assets/img/mail.svg";
+import githubImage from "../assets/img/github.svg";
+import linkedinImage from "../assets/img/linkedin.svg";
+import TagComponent from "../components/Tag.astro";
+import { Tag } from "../lib/tags";
 ---
 
-<Layout>
-	<div>
-		<h1 class="text-onyx-200 text-3xl text-center">Software Developer</h1>
-		<p class="p-4">
-			<div class="text-center">
-				I build software to solve problems. With over 10 years of
-				experience.
-			</div><div class="text-center">
-				I focus on creating solutions that are functional and simple to
-				use.
-			</div>
-		</p>
-	</div>
+<Layout title="Home">
+  <div>
+    <Picture
+      class="rounded-full w-48 h-48 mx-auto transform hover:scale-[1.02]"
+      src={portrait}
+      alt="Portrait"
+      formats={["avif", "webp", "png"]}
+      loading="eager"
+    />
+    <div class="flex items-center justify-center mt-4">
+      <ul class="flex justify-center gap-4">
+        <li>
+          <a href="mailto:mfindlater@justattack.com">
+            <Picture
+              src={emailImage}
+              alt="Email"
+              formats={["avif", "webp", "png"]}
+              loading="eager"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/mfindlater" target="_blank">
+            <Picture src={githubImage} alt="GitHub" loading="eager" />
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/matthewfindlater" target="_blank">
+            <Picture src={linkedinImage} alt="LinkedIn" loading="eager" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="p-4">
+    <h1 class="text-onyx-200 text-3xl text-center font-bold">Hi, I'm Matt!</h1>
+    <div class="text-center mt-4">
+      I am a software and game developer with a passion for creating
+    </div><div class="text-center">
+      I focus on creating solutions that are functional and simple to use.
+    </div>
+  </p>
+  <!-- Skills Section -->
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold text-center mb-4 underline">
+      Skills & Technologies
+    </h2>
+
+    <!-- Languages -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2 text-center">
+        Programming Languages
+      </h3>
+      <div class="flex flex-wrap justify-center gap-2 mb-4">
+        <TagComponent tag={Tag.csharp} />
+        <TagComponent tag={Tag.fsharp} />
+        <TagComponent tag={Tag.typescript} />
+        <TagComponent tag={Tag.javascript} />
+        <TagComponent tag={Tag.go} />
+        <TagComponent tag={Tag.html} />
+        <TagComponent tag={Tag.css} />
+        <TagComponent tag={Tag.sql} />
+        <TagComponent tag={Tag.java} />
+        <TagComponent tag={Tag.gdscript} />
+      </div>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2 text-center">
+        Frameworks & Libraries
+      </h3>
+      <div class="flex flex-wrap justify-center gap-2 mb-4">
+        <TagComponent tag={Tag.dotnet} />
+        <TagComponent tag={Tag.aspnetcore} />
+        <TagComponent tag={Tag.react} />
+        <TagComponent tag={Tag.astro} />
+        <TagComponent tag={Tag.tailwind} />
+        <TagComponent tag={Tag.htmx} />
+        <TagComponent tag={Tag.bulma} />
+        <TagComponent tag={Tag.angularjs} />
+      </div>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2 text-center">
+        Infrastructure & Tools
+      </h3>
+      <div class="flex flex-wrap justify-center gap-2 mb-4">
+        <TagComponent tag={Tag.git} />
+        <TagComponent tag={Tag.docker} />
+        <TagComponent tag={Tag.aws} />
+        <TagComponent tag={Tag.s3} />
+        <TagComponent tag={Tag.awscdk} />
+
+        <TagComponent tag={Tag.digitalocean} />
+        <TagComponent tag={Tag.fly} />
+
+        <TagComponent tag={Tag.mssqlserver} />
+        <TagComponent tag={Tag.postgresql} />
+        <TagComponent tag={Tag.sqlite} />
+      </div>
+    </div>
+
+    <!-- Game Engines -->
+
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-2 text-center">Game Engines</h3>
+      <div class="flex flex-wrap justify-center gap-2 mb-4">
+        <TagComponent tag={Tag.godot} />
+        <TagComponent tag={Tag.unity} />
+      </div>
+    </div>
+  </div>
+  <div class="mt-8">
+    <h2 class="text-2xl font-bold text-center mb-4 underline">Work History</h2>
+    <div class="text-center mb-4">
+      <h3 class="text-lg font-semibold">Freelance Full-Stack Developer</h3>
+      <p class="text-gray-700">Just Attack</p>
+      <p class="text-gray-700">February 2015 - Present</p>
+      <p class="text-gray-700">
+        Developed and maintained web applications using ASP.NET Core, React, and
+        PostgreSQL.
+      </p>
+    </div>
+    <div class="text-center mb-4">
+      <h3 class="text-lg font-semibold">Software Developer R&D</h3>
+      <p class="text-gray-700">clubsystems group</p>
+      <p class="text-gray-700">June 2009 - March 2020</p>
+      <p class="text-gray-700">
+        Worked on various projects including web applications and game
+        development.
+      </p>
+
+      <div class="mt-8">
+        <h2 class="text-2xl font-bold text-center mb-4 underline">Education</h2>
+        <div class="text-center mb-4">
+          <h3 class="text-lg font-semibold">
+            Bachelor of Science in Information Science & Technology
+          </h3>
+          <p class="text-gray-700">Temple University</p>
+          <p class="text-gray-700">Graduated: August 2020</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

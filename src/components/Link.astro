@@ -1,0 +1,18 @@
+---
+import { Picture } from "astro:assets";
+import arrowUpRightImage from "../assets/img/arrow-up-right.svg";
+
+const { name, href } = Astro.props as { name: string; href: string };
+---
+
+<a href={href} target="_blank" class="text-lg font-bold outline-2 rounded p-2"
+  >{name}
+  <span>
+    <Picture
+      src={arrowUpRightImage}
+      alt="Arrow Right"
+      class="w-4 h-4 inline-block ml-1"
+      loading="eager"
+    />
+  </span>
+</a>

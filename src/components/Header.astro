@@ -1,30 +1,117 @@
 ---
-import emailImage from "../assets/img/mail.svg";
-import githubImage from "../assets/img/github.svg";
-import linkedinImage from "../assets/img/linkedin.svg";
+import menuImage from "../assets/img/menu.svg";
+import closeImage from "../assets/img/x.svg";
+import { Picture } from "astro:assets";
+import sunImage from "../assets/img/sun.svg";
+import moonImage from "../assets/img/moon.svg";
 import { Image } from "astro:assets";
+
+const { title } = Astro.props as { title: string };
 ---
 
-<header
-    class="sticky text-center mt-4 py-4 rounded-xl bg-timberwolf-500 text-onyx-100"
->
-    <h1 class="text-4xl font-extrabold">Matthew Findlater</h1>
+<header class="sticky mt-4 flex flex-col items-center px-4 py-2 shadow">
+  <!-- Name centered at the top for all screen sizes -->
+  <div class="flex items-center justify-center w-full relative">
+    <!-- Mobile menu button positioned absolutely on the left -->
+    <div class="absolute left-0 md:hidden">
+      <button
+        id="menuButton"
+        class="cursor-pointer"
+        aria-label="Menu"
+        type="button"
+        aria-expanded="false"
+      >
+        <Image
+          src={menuImage}
+          alt="Menu"
+          class="menu-icon w-[32px]"
+          loading="eager"
+        />
+        <Image
+          src={closeImage}
+          alt="Close"
+          class="close-icon hidden w-[32px]"
+          loading="eager"
+        />
+      </button>
+    </div>
 
-    <ul class="flex justify-center mt-4 space-x-4">
-        <li>
-            <a href="mailto:mfindlater@justattack.com">
-                <Image src={emailImage} alt="Email" /> Email
-            </a>
-        </li>
-        <li>
-            <a href="https://github.com/mfindlater" target="_blank">
-                <Image src={githubImage} alt="GitHub" />Github
-            </a>
-        </li>
-        <li>
-            <a href="https://linkedin.com/in/matthewfindlater " target="_blank">
-                <Image src={linkedinImage} alt="LinkedIn" />LinkedIn
-            </a>
-        </li>
-    </ul>
+    <h1 class="text-4xl font-extrabold text-center">Matthew Findlater</h1>
+  </div>
+
+  <!-- Navigation links below social links -->
+  <nav id="mobileNav" class="hidden md:block w-full">
+    <ol class="flex flex-col md:flex-row md:justify-center md:gap-8 mt-4">
+      <li>
+        <a
+          href="/"
+          class="text-lg font-bold block hover:shadow hover:outline-2 rounded p-2 md:inline-block"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/projects"
+          class="text-lg font-bold block hover:shadow hover:outline-2 rounded p-2 md:inline-block"
+          >Projects</a
+        >
+      </li>
+    </ol>
+  </nav>
+
+  <!--  <button id="" class="cursor-pointer justify-right flex mr-16 mt-2">
+    <div id="sun">
+      <Image src={moonImage} alt="Moon" class="md:block w-[24px]" />
+    </div>
+  </button> -->
 </header>
+
+<script>
+  // JavaScript to toggle mobile menu
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menuButton");
+    const mobileNav = document.getElementById("mobileNav");
+    const menuIcon = document.querySelector(".menu-icon");
+    const closeIcon = document.querySelector(".close-icon");
+
+    if (menuButton && mobileNav && menuIcon && closeIcon) {
+      menuButton.addEventListener("click", () => {
+        // Toggle navigation visibility
+        mobileNav.classList.toggle("hidden");
+
+        // Toggle between menu and close icons
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+
+        // Update aria-expanded attribute
+        const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Smooth transition for the mobile menu */
+  #mobileNav {
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    #mobileNav:not(.hidden) {
+      display: block;
+      animation: slideDown 0.3s ease-in-out;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
